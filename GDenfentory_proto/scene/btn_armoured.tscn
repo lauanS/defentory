@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.698334
+margin_top = 0.698334
+margin_right = -0.698364
+margin_bottom = 0.698364
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_right = 76.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 3.49168
+margin_top = 32.8218
+margin_right = 67.4917
+margin_bottom = 46.8218
+text = "Armoured"
