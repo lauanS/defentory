@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://sprites/terrain/environment/medievalEnvironment_01.png" type="Texture" id=1]
+[ext_resource path="res://sprites/terrain/environment/medievalEnvironment_02.png" type="Texture" id=2]
+[ext_resource path="res://sprites/terrain/environment/medievalEnvironment_03.png" type="Texture" id=3]
+[ext_resource path="res://sprites/terrain/environment/medievalEnvironment_04.png" type="Texture" id=4]
+[ext_resource path="res://sprites/terrain/environment/scifiEnvironment_11.png" type="Texture" id=5]
+[ext_resource path="res://sprites/terrain/environment/scifiEnvironment_12.png" type="Texture" id=6]
+[ext_resource path="res://sprites/terrain/environment/scifiEnvironment_13.png" type="Texture" id=7]
+[ext_resource path="res://sprites/terrain/environment/scifiEnvironment_14.png" type="Texture" id=8]
+[ext_resource path="res://sprites/terrain/environment/scifiEnvironment_16.png" type="Texture" id=9]
+[ext_resource path="res://sprites/terrain/environment/scifiEnvironment_15.png" type="Texture" id=10]
+[ext_resource path="res://sprites/terrain/environment/medievalEnvironment_20.png" type="Texture" id=11]
+[ext_resource path="res://sprites/terrain/environment/medievalEnvironment_06.png" type="Texture" id=12]
+
+[node name="tileset_env" type="Node2D"]
+
+[node name="medievalEnvironment_01" type="Sprite" parent="."]
+position = Vector2( 352, 160 )
+texture = ExtResource( 1 )
+
+[node name="medievalEnvironment_02" type="Sprite" parent="."]
+position = Vector2( 64, 160 )
+texture = ExtResource( 2 )
+
+[node name="medievalEnvironment_03" type="Sprite" parent="."]
+position = Vector2( 256, 160 )
+texture = ExtResource( 3 )
+
+[node name="medievalEnvironment_04" type="Sprite" parent="."]
+position = Vector2( 160, 160 )
+texture = ExtResource( 4 )
+
+[node name="scifiEnvironment_11" type="Sprite" parent="."]
+position = Vector2( 352, 64 )
+texture = ExtResource( 5 )
+
+[node name="scifiEnvironment_12" type="Sprite" parent="."]
+position = Vector2( 64, 64 )
+texture = ExtResource( 6 )
+
+[node name="scifiEnvironment_13" type="Sprite" parent="."]
+position = Vector2( 256, 64 )
+texture = ExtResource( 7 )
+
+[node name="scifiEnvironment_14" type="Sprite" parent="."]
+position = Vector2( 160, 64 )
+texture = ExtResource( 8 )
+
+[node name="scifiEnvironment_16" type="Sprite" parent="."]
+position = Vector2( 448, 64 )
+texture = ExtResource( 9 )
+
+[node name="scifiEnvironment_15" type="Sprite" parent="."]
+position = Vector2( 544, 64 )
+texture = ExtResource( 10 )
+
+[node name="medievalEnvironment_20" type="Sprite" parent="."]
+position = Vector2( 448, 160 )
+texture = ExtResource( 11 )
+
+[node name="medievalEnvironment_06" type="Sprite" parent="."]
+position = Vector2( 544, 160 )
+texture = ExtResource( 12 )
