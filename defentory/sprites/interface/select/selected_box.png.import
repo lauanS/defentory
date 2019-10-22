@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robot.png-135f200efa1bf996669622c39cab905d.stex"
+path="res://.import/selected_box.png-25cdd8e27a7c490408b95745bc8bfedb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/units/enemies/robot.png"
-dest_files=[ "res://.import/robot.png-135f200efa1bf996669622c39cab905d.stex" ]
+source_file="res://sprites/interface/select/selected_box.png"
+dest_files=[ "res://.import/selected_box.png-25cdd8e27a7c490408b95745bc8bfedb.stex" ]
 
 [params]
 

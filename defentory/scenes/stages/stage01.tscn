@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilesets/tileset_terrain.tres" type="TileSet" id=1]
 [ext_resource path="res://tilesets/tileset_env_flora.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/models/towers/towerDefense_tile205.png" type="Texture" id=4]
 [ext_resource path="res://sprites/models/towers/towerDefense_tile206.png" type="Texture" id=5]
 [ext_resource path="res://scenes/control/camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/units/robots/robot.tscn" type="PackedScene" id=7]
 
 [node name="stage" type="Node2D"]
 
@@ -41,3 +42,6 @@ texture = ExtResource( 5 )
 
 [node name="camera" parent="." instance=ExtResource( 6 )]
 zoom_min = 0.75
+
+[node name="robot" parent="." instance=ExtResource( 7 )]
+position = Vector2( 289.15, 138.466 )
