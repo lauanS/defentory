@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/cameraMovement.gd" type="Script" id=1]
 
 [node name="camera" type="Camera2D"]
-anchor_mode = 0
+position = Vector2( 511.557, 300.027 )
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
