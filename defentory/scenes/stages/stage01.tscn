@@ -40,3 +40,4 @@ position = Vector2( 944.451, 493.186 )
 texture = ExtResource( 5 )
 
 [node name="camera" parent="." instance=ExtResource( 6 )]
+zoom_min = 0.75
