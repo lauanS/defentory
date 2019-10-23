@@ -17,7 +17,18 @@ var zooming = false
 func _ready():
 	set_process_input(true)
 	
-
+func _input(event):	
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			zooming = true
+			if event.button_index == BUTTON_WHEEL_UP:
+				zoom_factor -= 0.1
+				zoom_pos = get_global_mouse_position()
+			if event.button_index == BUTTON_WHEEL_DOWN:
+				zoom_factor += 0.1
+				zoom_pos = get_global_mouse_position()
+		else:
+			zooming = false
 				
 func _unhandled_input(event):
 	# Verificando se o evento eh o comando para movimentar a camera
