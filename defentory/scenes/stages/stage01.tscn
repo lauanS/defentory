@@ -7,7 +7,7 @@
 [ext_resource path="res://sprites/models/towers/towerDefense_tile205.png" type="Texture" id=5]
 [ext_resource path="res://sprites/models/towers/towerDefense_tile206.png" type="Texture" id=6]
 [ext_resource path="res://scenes/units/robots/robot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/control/camera_mouse.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/control/camera_edges.tscn" type="PackedScene" id=8]
 
 [node name="stage" type="Node2D"]
 script = ExtResource( 1 )
