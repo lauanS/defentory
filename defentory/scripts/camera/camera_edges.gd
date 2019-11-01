@@ -61,5 +61,4 @@ func _input(event):
 			
 	if event is InputEventMouse:
 		mouse_pos = event.position
-		print("Mouse_pos: ", mouse_pos)
 	
