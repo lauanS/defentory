@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scripts/cameraMovement.gd" type="Script" id=1]
+[ext_resource path="res://scripts/camera/camera_movement.gd" type="Script" id=1]
+
+
 
 [node name="camera" type="Camera2D"]
 position = Vector2( 511.557, 300.027 )
