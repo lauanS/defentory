@@ -42,7 +42,26 @@ editor/display_folded = true
 position = Vector2( 944.451, 493.186 )
 texture = ExtResource( 6 )
 
-[node name="robot" parent="." instance=ExtResource( 7 )]
-position = Vector2( 289.15, 138.466 )
+[node name="robot01" parent="." instance=ExtResource( 7 )]
+position = Vector2( 352.175, 135.812 )
+
+[node name="robot02" parent="." instance=ExtResource( 7 )]
+position = Vector2( 244.701, 184.242 )
+
+[node name="robot03" parent="." instance=ExtResource( 7 )]
+position = Vector2( 239.393, 114.583 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Base" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="draw_react" type="ColorRect" parent="UI/Base"]
+margin_left = 908.018
+margin_top = 386.337
+margin_right = 968.018
+margin_bottom = 426.337
+color = Color( 0.278431, 0.631373, 0.890196, 0.215686 )

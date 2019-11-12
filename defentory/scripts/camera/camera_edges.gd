@@ -1,8 +1,8 @@
-extends Camera2D
+extends "res://scripts/control/select_units.gd"
 
 export var pan_speed = 15.0
 
-export var mouse_pos = Vector2()
+# export var mouse_pos = Vector2()
 
 export var margin_x = 200.0
 export var margin_y = 150.0
@@ -17,11 +17,10 @@ var zoom_pos = Vector2()
 var zoom_factor = 1.5
 var zooming = false
 
+
 func _ready():
 	print("Size: ", OS.window_size.x, "/", OS.window_size.y)
-	pass # Replace with function body.
-
-
+	
 func _process(delta):
 	if Input.is_key_pressed(KEY_CONTROL):	
 		if mouse_pos.x < margin_x:
@@ -58,7 +57,5 @@ func _input(event):
 				zoom_pos = get_global_mouse_position()
 		else:
 			zooming = false
-			
-	if event is InputEventMouse:
-		mouse_pos = event.position
+
 	
