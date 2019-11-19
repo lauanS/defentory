@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/world_manager.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/tileset_terrain.tres" type="TileSet" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://sprites/models/towers/towerDefense_tile206.png" type="Texture" id=6]
 [ext_resource path="res://scenes/units/robots/robot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/control/camera_edges.tscn" type="PackedScene" id=8]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 970.875, 492.202, 1112.84, 438.757, 1132.88, 433.746, 1279.86, 702.645, 952.503, 512.245, 1139.56, 405.353, 1278.19, 1.16875, 1137.89, 397.002, 1091.13, 432.076, 964.194, 462.139, 0.498573, -0.501434, 1084.45, 393.662, -1.17161, 704.316, 925.78, 463.809, 934.131, 507.234, 922.439, 493.873 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 3, 2 ), PoolIntArray( 6, 5, 7 ), PoolIntArray( 8, 1, 0, 9 ), PoolIntArray( 10, 6, 7, 11 ), PoolIntArray( 12, 10, 11, 13 ), PoolIntArray( 11, 8, 9, 13 ), PoolIntArray( 4, 3, 12, 14 ), PoolIntArray( 15, 14, 12 ), PoolIntArray( 13, 15, 12 ) ]
+outlines = [ PoolVector2Array( -1.17161, 704.316, 0.498573, -0.501434, 1278.19, 1.16875, 1279.86, 702.645 ), PoolVector2Array( 934.131, 507.234, 922.439, 493.873, 925.78, 463.809, 964.194, 462.139, 970.875, 492.202, 952.503, 512.245 ), PoolVector2Array( 1091.13, 432.076, 1084.45, 393.662, 1137.89, 397.002, 1139.56, 405.353, 1132.88, 433.746, 1112.84, 438.757 ) ]
 
 [node name="stage" type="Node2D"]
 script = ExtResource( 1 )
@@ -52,8 +57,10 @@ position = Vector2( 244.701, 184.242 )
 position = Vector2( 239.393, 114.583 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
+anchor_mode = 0
 
 [node name="UI" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Base" type="Control" parent="UI"]
 margin_right = 40.0
@@ -65,3 +72,9 @@ margin_top = 386.337
 margin_right = 968.018
 margin_bottom = 426.337
 color = Color( 0.278431, 0.631373, 0.890196, 0.215686 )
+
+[node name="nav" type="Navigation2D" parent="."]
+
+[node name="polygon" type="NavigationPolygonInstance" parent="nav"]
+visible = false
+navpoly = SubResource( 1 )

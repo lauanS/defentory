@@ -2,6 +2,7 @@ extends Node2D
 
 var selected_units = []
 var units
+
 # Adiciona a unit a lista de unidades selecionadas
 func select_unit(unit):
 	if not selected_units.has(unit):
@@ -12,10 +13,12 @@ func deselect_unit(unit):
 	if selected_units.has(unit):
 		selected_units.erase(unit)
 
+# Retira todas as unidades da lista de unidade selecionadas
 func deselect_all():
 	for unit in selected_units:
 		deselect_unit(unit)
-		
+
+# Obtem as unidades na area
 func get_units_in_area(area):
 	var units_in_area = []
 	for unit in units:
@@ -23,7 +26,8 @@ func get_units_in_area(area):
 			if unit.position.y > area[0].y and unit.position.y < area[1].y:
 				units_in_area.append(unit)
 	return units_in_area
-	
+
+# Gera a area selecionada e obtem as unidades nela
 func area_selected(obj):
 	var start = obj.start
 	var end = obj.end
@@ -37,6 +41,11 @@ func area_selected(obj):
 		deselect_all()
 	for unit in units_in_area:
 		unit.selected = not unit.selected
-	print("area_selected: ", area[0], " to ", area[1])
+
+# Move as unidades selecionadas	
+func start_move_selection(obj):
+	for unit in selected_units:
+		unit.move_unit(obj.move_to_point)
+		
 func _ready():
 	units = get_tree().get_nodes_in_group("units") 

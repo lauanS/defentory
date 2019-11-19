@@ -9,12 +9,16 @@ var end_v = Vector2()
 
 var is_dragging = false
 
+# var pathfinder
+var move_to_point = Vector2()
+signal start_move_selection
+
 onready var rect_draw = $'../UI/Base/draw_react'
 
 signal area_selected
 func _ready():
 	connect("area_selected", get_parent(), "area_selected", [self])
-
+	connect("start_move_selection", get_parent(), "start_move_selection", [self])
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_left_mouse_button"):
@@ -38,7 +42,10 @@ func _process(delta):
 			end = start
 			is_dragging = false
 			draw_area(false)
-			
+	
+	if Input.is_action_just_released("ui_right_mouse_button"):
+		move_to_point = mouse_pos_global
+		emit_signal("start_move_selection")
 		
 func draw_area(s = true):
 	rect_draw.rect_size = Vector2(abs(start_v.x-end_v.x), abs(start_v.y - end_v.y))

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends "res://scripts/control/move_to_point.gd"
 
 export var selected = false setget set_selected
 
@@ -17,26 +17,24 @@ func set_selected(value):
 		box.visible = value
 		name_label.visible = value
 		if selected:
+			print("sinal: was_selected [", selected, "]")
 			emit_signal("was_selected", self)
 		else:
+			print("sinal: was_deselected [", selected, "]")
 			emit_signal("was_deselected", self)
 		
 func _ready():
-	connect("was_deselected", get_parent(), "select_unit")
+	connect("was_selected", get_parent(), "select_unit")
 	connect("was_deselected", get_parent(), "deselect_unit")
 	
 	name_label.visible = false
 	name_label.text = name
 
-func _process(delta):
-	pass
-
+	
 # Evento para verificar se a unidade esta sendo (de)selecionada
 func _on_robot_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if event.button_index == BUTTON_LEFT:
-				set_selected(true)
-			if event.button_index == BUTTON_RIGHT:
-				set_selected(false)
+				set_selected(!selected)
 
