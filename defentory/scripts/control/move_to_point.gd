@@ -12,7 +12,6 @@ func _ready():
 
 func _process(delta):
 	if move_p:	
-		print("movendo")
 		var nav = get_node("/root/stage/nav")
 		var simple_path = nav.get_simple_path(position, 
 								to_move + Vector2(randi() % 100, 
@@ -26,7 +25,7 @@ func _process(delta):
 func move_towards(pos, point, delta):
 	var v = (point - pos).normalized()
 	v *= delta * speed
-	position += v
+	move_and_collide(v)
 	if position.distance_squared_to(point) < 9:
 		path.remove(0)
 		initial_position = position

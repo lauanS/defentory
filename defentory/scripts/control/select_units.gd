@@ -11,11 +11,12 @@ var is_dragging = false
 
 # var pathfinder
 var move_to_point = Vector2()
+
+signal area_selected
 signal start_move_selection
 
 onready var rect_draw = $'../UI/Base/draw_react'
 
-signal area_selected
 func _ready():
 	connect("area_selected", get_parent(), "area_selected", [self])
 	connect("start_move_selection", get_parent(), "start_move_selection", [self])
