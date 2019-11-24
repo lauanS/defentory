@@ -36,14 +36,12 @@ format = 1
 tile_data = PoolIntArray( 17, 1610612757, 0, 18, 1610612752, 0, 19, 1610612753, 0, 65555, 1610612751, 0, 131091, 1610612751, 0, 196627, 1610612751, 0, 262160, 1610612762, 0, 262161, 1610612752, 0, 262162, 1610612752, 0, 262163, 1610612753, 0, 327696, 1610612751, 0, 327699, 1610612751, 0, 393232, 1610612751, 0, 393235, 1610612751, 0, 458765, 29, 0, 458768, 1610612757, 0, 458769, 1610612752, 0, 458770, 18, 0, 458771, 1610612756, 0, 524301, 25, 0, 524302, 16, 0, 524303, 16, 0, 524304, 16, 0, 524305, 16, 0, 524306, 1610612756, 0 )
 
 [node name="double_tower" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="tower" type="Sprite" parent="double_tower"]
 position = Vector2( 1110.55, 419.366 )
 texture = ExtResource( 5 )
 
 [node name="single_tower" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="tower" type="Sprite" parent="single_tower"]
 position = Vector2( 944.451, 493.186 )
@@ -62,7 +60,6 @@ position = Vector2( 239.393, 114.583 )
 anchor_mode = 0
 
 [node name="UI" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Base" type="Control" parent="UI"]
 margin_right = 40.0
