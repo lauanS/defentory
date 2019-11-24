@@ -3,6 +3,13 @@ extends Node2D
 var selected_units = []
 var units
 
+var construction
+
+# Obtem todas as unidades da cena	
+func _ready():
+	units = get_tree().get_nodes_in_group("units") 
+	construction = preload("res://scenes/models/towers/double_cannon_tower.tscn")
+	
 # Adiciona a unit a lista de unidades selecionadas
 func select_unit(unit):
 	if not selected_units.has(unit):
@@ -46,6 +53,13 @@ func area_selected(obj):
 func start_move_selection(obj):
 	for unit in selected_units:
 		unit.move_unit(obj.move_to_point)
-		
-func _ready():
-	units = get_tree().get_nodes_in_group("units") 
+
+func instance_construction():
+	var new_construction = construction.instance()
+	new_construction.set_position(get_global_mouse_position())
+	add_child(new_construction)
+	
+func _input(event):
+	if event is InputEventKey:
+		if event.is_action_pressed("ui_build"):
+			instance_construction()
