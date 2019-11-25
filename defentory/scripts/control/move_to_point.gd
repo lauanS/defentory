@@ -7,6 +7,8 @@ var to_move = Vector2()
 var path = PoolVector2Array()
 var initial_position = Vector2()
 
+var walking
+
 func _ready():
 	pass
 
@@ -21,6 +23,9 @@ func _process(delta):
 		move_p = false
 	if path.size() > 0:
 		move_towards(initial_position, path[0], delta)
+		walking = true
+	else:
+		walking = false
 
 func move_towards(pos, point, delta):
 	var v = (point - pos).normalized()

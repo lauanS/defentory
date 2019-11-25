@@ -5,6 +5,8 @@ var units
 
 var construction
 
+var walking
+
 # Obtem todas as unidades da cena	
 func _ready():
 	units = get_tree().get_nodes_in_group("units") 
