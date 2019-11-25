@@ -9,6 +9,9 @@ var initial_position = Vector2()
 
 var walking
 
+signal started_walking
+signal stopped_walking
+
 func _ready():
 	pass
 
@@ -23,8 +26,13 @@ func _process(delta):
 		move_p = false
 	if path.size() > 0:
 		move_towards(initial_position, path[0], delta)
+		
+		if not walking:
+			emit_signal("started_walking")
 		walking = true
 	else:
+		if walking:
+			emit_signal("stopped_walking")
 		walking = false
 
 func move_towards(pos, point, delta):

@@ -5,12 +5,13 @@ var units
 
 var construction
 
-var walking
-
 # Obtem todas as unidades da cena	
 func _ready():
 	units = get_tree().get_nodes_in_group("units") 
 	construction = preload("res://scenes/models/towers/double_cannon_tower.tscn")
+	# Carregando musica de fundo
+	$music/sound.set_sound("res://assets/sounds/sound_of_madnes.wav")
+	$music/sound.play_in_background()
 	
 # Adiciona a unit a lista de unidades selecionadas
 func select_unit(unit):
