@@ -20,6 +20,7 @@ var zooming = false
 
 func _ready():
 	print("Size: ", OS.window_size.x, "/", OS.window_size.y)
+	set_camera_limits()
 	
 func _process(delta):
 	if Input.is_key_pressed(KEY_CONTROL):	
@@ -58,4 +59,13 @@ func _input(event):
 		else:
 			zooming = false
 
+func set_camera_limits():
+	var tile_map = get_node("/root/stage/terrain")
+	var map_limits = tile_map.get_used_rect()
+	
+	var map_cellsize = tile_map.cell_size
+	limit_left = map_limits.position.x * map_cellsize.x
+	limit_right = map_limits.end.x * map_cellsize.x
+	limit_top = map_limits.position.y * map_cellsize.y
+	limit_bottom = map_limits.end.y * map_cellsize.y
 	
