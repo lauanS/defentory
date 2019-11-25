@@ -56,6 +56,10 @@ func start_move_selection(obj):
 	for unit in selected_units:
 		unit.move_unit(obj.move_to_point)
 
+
+func set_construction(path):
+	construction = load(path)
+
 func instance_construction():
 	var new_construction = construction.instance()
 	new_construction.set_position(get_global_mouse_position())

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/world_manager.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/tileset_terrain.tres" type="TileSet" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://sprites/models/towers/towerDefense_tile206.png" type="Texture" id=6]
 [ext_resource path="res://scenes/units/robots/robot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/control/camera_edges.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/models/towers/double_cannon_tower.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/interface/construction_selection.gd" type="Script" id=9]
 [ext_resource path="res://sprites/models/towers/towerDefense_tile250.png" type="Texture" id=10]
+[ext_resource path="res://sprites/models/walls/wall_basic.png" type="Texture" id=11]
+[ext_resource path="res://scenes/models/towers/double_cannon_tower.tscn" type="PackedScene" id=12]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 970.875, 492.202, 1112.84, 438.757, 1132.88, 433.746, 1279.86, 702.645, 952.503, 512.245, 1139.56, 405.353, 1278.19, 1.16875, 1137.89, 397.002, 1091.13, 432.076, 964.194, 462.139, 0.498573, -0.501434, 1084.45, 393.662, -1.17161, 704.316, 925.78, 463.809, 934.131, 507.234, 922.439, 493.873 )
@@ -36,12 +38,14 @@ format = 1
 tile_data = PoolIntArray( -65519, -1073741802, 0, -65517, -1073741802, 0, -65506, -1073741802, 0, 17, 1610612757, 0, 18, 1610612752, 0, 19, 1610612753, 0, 20, 22, 0, 30, -1073741808, 0, 65555, 1610612751, 0, 65566, -1073741808, 0, 131091, 1610612751, 0, 131093, -1610612711, 0, 131094, -1073741809, 0, 131095, -1073741809, 0, 131096, -1073741809, 0, 131097, -1073741809, 0, 131098, -1073741809, 0, 131099, -1073741809, 0, 131100, -1073741809, 0, 131101, -1073741809, 0, 131102, 26, 0, 196627, 1610612751, 0, 196629, -1073741808, 0, 262160, 1610612762, 0, 262161, 1610612752, 0, 262162, 1610612752, 0, 262163, 1610612753, 0, 262164, 16, 0, 262165, -1073741799, 0, 327696, 1610612751, 0, 327699, 1610612751, 0, 393232, 1610612751, 0, 393235, 1610612751, 0, 458765, 29, 0, 458768, 1610612757, 0, 458769, 1610612752, 0, 458770, 18, 0, 458771, 19, 0, 458772, -1610612716, 0, 524301, 25, 0, 524302, 16, 0, 524303, 16, 0, 524304, 16, 0, 524305, 16, 0, 524306, 1610612756, 0, 524308, -1073741808, 0, 589844, -1073741808, 0, 655380, -1073741808, 0, 720916, -1073741808, 0, 786452, -1073741804, 0, 786453, -1073741809, 0, 786454, -1073741809, 0, 786455, -1610612716, 0, 851991, -1073741808, 0, 852000, 1610612764, 0, 852007, 1610612764, 0, 917527, -1073741808, 0, 917536, 1610612751, 0, 917543, 1610612751, 0, 983063, -1073741808, 0, 983072, 1610612751, 0, 983079, 1610612751, 0, 1048599, 1610612759, 0, 1048600, 1610612752, 0, 1048601, 1610612752, 0, 1048602, 1610612752, 0, 1048603, 1610612752, 0, 1048604, 1610612752, 0, 1048605, 1610612752, 0, 1048606, 1610612752, 0, 1048607, 1610612752, 0, 1048608, 1610612754, 0, 1048609, 1610612752, 0, 1048610, 1610612752, 0, 1048611, 1610612752, 0, 1048612, 1610612752, 0, 1048613, 1610612752, 0, 1048614, 1610612752, 0, 1048615, 1610612753, 0, 1048616, 1610612752, 0, 1048617, 1610612752, 0, 1048618, 1610612752, 0, 1048619, 1610612752, 0, 1048620, 1610612752, 0, 1048621, 1610612752, 0, 1114135, -1073741808, 0, 1114151, 1610612751, 0, 1179671, -1073741808, 0, 1179687, 1610612751, 0, 1245207, -1073741808, 0, 1245223, 1610612765, 0, 1310740, 1610612758, 0, 1310741, 1610612752, 0, 1310742, 1610612752, 0, 1310743, 17, 0, 1310744, 1610612752, 0, 1310745, 1610612752, 0, 1310746, 22, 0, 1376279, -1073741808, 0, 1441815, -1073741808, 0, 1507351, -1073741808, 0, 1572887, -1073741808, 0, 1638423, -1073741804, 0, 1638424, -1073741809, 0, 1638425, -1073741809, 0, 1638426, -1073741809, 0, 1638427, -1073741809, 0, 1638428, -1073741809, 0, 1638429, 21, 0, 1703965, -1073741808, 0, 1769501, -1073741808, 0, 1835037, -1073741808, 0, 1900573, -1073741808, 0, 1966109, -1073741808, 0, 2031645, -1073741808, 0, 2097181, -1073741808, 0 )
 
 [node name="double_tower" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="tower" type="Sprite" parent="double_tower"]
 position = Vector2( 1110.55, 419.366 )
 texture = ExtResource( 5 )
 
 [node name="single_tower" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="tower" type="Sprite" parent="single_tower"]
 position = Vector2( 944.451, 493.186 )
@@ -59,9 +63,43 @@ position = Vector2( 239.393, 114.583 )
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 anchor_mode = 0
 
+[node name="construction_selection" type="Control" parent="Camera2D"]
+margin_left = 18.0875
+margin_top = 18.577
+margin_right = 58.0875
+margin_bottom = 58.577
+
+[node name="background" type="PanelContainer" parent="Camera2D/construction_selection"]
+margin_right = 14.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="menu" type="HBoxContainer" parent="Camera2D/construction_selection/background"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 180.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+script = ExtResource( 9 )
+
+[node name="double_cannon_tower" type="TextureButton" parent="Camera2D/construction_selection/background/menu"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 10 )
+
+[node name="basic_wall" type="TextureButton" parent="Camera2D/construction_selection/background/menu"]
+margin_left = 79.0
+margin_right = 143.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 11 )
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Base" type="Control" parent="UI"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -79,9 +117,7 @@ editor/display_folded = true
 visible = false
 navpoly = SubResource( 1 )
 
-[node name="tower" parent="." instance=ExtResource( 9 )]
+[node name="tower" parent="." instance=ExtResource( 12 )]
 position = Vector2( 747.521, 469.151 )
-
-[node name="towerDefense_tile250" type="Sprite" parent="."]
-position = Vector2( 381.598, 194.452 )
-texture = ExtResource( 10 )
+[connection signal="pressed" from="Camera2D/construction_selection/background/menu/double_cannon_tower" to="Camera2D/construction_selection/background/menu" method="_on_double_cannon_tower_pressed"]
+[connection signal="pressed" from="Camera2D/construction_selection/background/menu/basic_wall" to="Camera2D/construction_selection/background/menu" method="_on_basic_wall_pressed"]
