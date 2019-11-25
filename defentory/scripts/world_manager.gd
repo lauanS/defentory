@@ -24,8 +24,13 @@ func deselect_unit(unit):
 
 # Retira todas as unidades da lista de unidade selecionadas
 func deselect_all():
-	for unit in selected_units:
-		deselect_unit(unit)
+	var i = len(selected_units) - 1
+	var unit
+	while i >= 0:
+		unit = selected_units[i]
+		unit.selected = false
+		i -= 1;
+
 
 # Obtem as unidades na area
 func get_units_in_area(area):
@@ -45,9 +50,7 @@ func area_selected(obj):
 	area.append(Vector2(min(start.x, end.x), min(start.y, end.y)))
 	area.append(Vector2(max(start.x, end.x), max(start.y, end.y)))
 	var units_in_area = get_units_in_area(area)
-	# 
-	if not Input.is_key_pressed(KEY_SHIFT):
-		deselect_all()
+	 
 	for unit in units_in_area:
 		unit.selected = not unit.selected
 
@@ -69,3 +72,5 @@ func _input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("ui_build"):
 			instance_construction()
+		if Input.is_key_pressed(KEY_SHIFT):
+			deselect_all()

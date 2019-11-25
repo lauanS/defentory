@@ -10,6 +10,14 @@ onready var name_label = $name_label
 signal was_selected
 signal was_deselected
 
+func _ready():
+	connect("was_selected", get_parent(), "select_unit")
+	connect("was_deselected", get_parent(), "deselect_unit")
+	
+	name_label.visible = false
+	name_label.text = name
+	box.visible = false
+	
 # Altera o status de selecao da unidade
 func set_selected(value):
 	if selected != value:
@@ -22,14 +30,6 @@ func set_selected(value):
 		else:
 			print("sinal: was_deselected [", selected, "]")
 			emit_signal("was_deselected", self)
-		
-func _ready():
-	connect("was_selected", get_parent(), "select_unit")
-	connect("was_deselected", get_parent(), "deselect_unit")
-	
-	name_label.visible = false
-	name_label.text = name
-
 	
 # Evento para verificar se a unidade esta sendo (de)selecionada
 func _on_robot_input_event(viewport, event, shape_idx):
