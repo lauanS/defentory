@@ -13,6 +13,9 @@ var is_dragging = false
 # variaveis para pathfinder
 var move_to_point = Vector2()
 
+
+var connect_errs = []
+
 signal area_selected
 signal start_move_selection
 
@@ -20,10 +23,10 @@ onready var rect_draw = $'../UI/Base/draw_react'
 
 func _ready():
 	# Conectando com os sinais
-	connect("area_selected", get_parent(), "area_selected", [self])
-	connect("start_move_selection", get_parent(), "start_move_selection", [self])
-	
-func _process(delta):
+	connect_errs.append(connect("area_selected", get_parent(), "area_selected", [self]))
+	connect_errs.append(connect("start_move_selection", get_parent(), "start_move_selection", [self]))
+
+func _process(_delta):
 	# Obtendo a posicao inicial ao desenhar a area
 	if Input.is_action_just_pressed("ui_left_mouse_button"):
 		start = mouse_pos_global

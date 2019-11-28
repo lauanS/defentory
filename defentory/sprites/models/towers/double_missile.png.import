@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/towerDefense_tile292.png-83d31873b3fac273dad13d2761b194a6.stex"
+path="res://.import/double_missile.png-00cc37ccce9b6f0981bff33f8c76bc34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/models/towers/towerDefense_tile292.png"
-dest_files=[ "res://.import/towerDefense_tile292.png-83d31873b3fac273dad13d2761b194a6.stex" ]
+source_file="res://sprites/models/towers/double_missile.png"
+dest_files=[ "res://.import/double_missile.png-00cc37ccce9b6f0981bff33f8c76bc34.stex" ]
 
 [params]
 

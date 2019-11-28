@@ -9,8 +9,13 @@ var initial_position = Vector2()
 
 var walking
 
+# Kinematic body que colidiu
+var collided
+
 signal started_walking
 signal stopped_walking
+
+
 
 func _ready():
 	pass
@@ -38,7 +43,8 @@ func _process(delta):
 func move_towards(pos, point, delta):
 	var v = (point - pos).normalized()
 	v *= delta * speed
-	move_and_collide(v)
+	collided = move_and_collide(v)
+	
 	if position.distance_squared_to(point) < 9:
 		path.remove(0)
 		initial_position = position

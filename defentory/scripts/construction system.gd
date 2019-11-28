@@ -1,9 +1,6 @@
 extends StaticBody2D
 
 var sprite
-var new_color 
-
-var transparency = 0
 
 var completed = false
 
@@ -15,8 +12,13 @@ var progress = 0
 
 var building = false
 
+# erros de conexao
+var connect_errs = []
+
 signal started_building
 signal stopped_building
+
+
 
 func _ready():
 	# Deixa transparente a construcao ao ser instanciada
@@ -27,13 +29,13 @@ func _ready():
 	timer = get_node("build_area/timer")
 	
 	timer.set_wait_time(wait_time)
-	timer.connect("timeout", self, "_on_Timer_timeout")
+	connect_errs.append(timer.connect("timeout", self, "_on_Timer_timeout"))
 	
 	bar = get_node("progress_bar/bar/gauge")
 	bar.set_modulate(Color(1, 1, 1, 0.5))
 	bar.set_value(progress)
 	
-func _process(delta):
+func _process(_delta):
 	if nearby_units:
 		construction()
 	

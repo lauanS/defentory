@@ -7,7 +7,7 @@ func _ready():
 
 # Carrega a fase
 func _on_btn_start_pressed():
-	get_tree().change_scene(stage_path)
+	var _err = get_tree().change_scene(stage_path)
 
 # Fecha o jogo
 func _on_btn_quit_pressed():

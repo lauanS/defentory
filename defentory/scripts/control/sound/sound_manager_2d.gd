@@ -6,7 +6,7 @@ var keep_playing = false
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if keep_playing:
 		play_song()
 		
@@ -25,4 +25,5 @@ func play_song():
 		play()
 		
 func set_sound(path):
+	path_sound = path
 	set_stream(load(path))
