@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class CameraController : MonoBehaviour
-{
+public class CameraController : MonoBehaviour {
     public float panSpeed = 10f;
     public float panBorderThickness = 20f;
     public Vector2 panLimit;
@@ -13,21 +12,17 @@ public class CameraController : MonoBehaviour
     public float maxZoom = 8;
 
     private bool borderMovement = false;
-    void Update()
-    {
+    void Update(){
         Vector3 pos = transform.position;
-
         
         float verticalCommand = getVerticalCommand();
         float horizontalCommand = getHorizontalCommand();
 
-        if(verticalCommand != 0)
-        {
+        if(verticalCommand != 0){
             pos.y += panSpeed * Time.deltaTime * verticalCommand;
         }
         
-        if(horizontalCommand != 0)
-        {
+        if(horizontalCommand != 0){
             pos.x += panSpeed * Time.deltaTime * horizontalCommand;
         } 
 
@@ -49,14 +44,11 @@ public class CameraController : MonoBehaviour
     private float getVerticalCommand(){
         float verticalCommand = Input.GetAxis("Vertical");
 
-        if(verticalCommand == 0 && borderMovement)
-        {
-            if(Input.mousePosition.y >= Screen.height - panBorderThickness)
-            {
+        if(verticalCommand == 0 && borderMovement){
+            if(Input.mousePosition.y >= Screen.height - panBorderThickness){
                 verticalCommand = 1;
             }
-            if(Input.mousePosition.y <= panBorderThickness)
-            {
+            if(Input.mousePosition.y <= panBorderThickness){
                 verticalCommand = -1;
             }
         }
@@ -67,18 +59,14 @@ public class CameraController : MonoBehaviour
     private float getHorizontalCommand(){
         float horizontalCommand = Input.GetAxis("Horizontal");
 
-        if(horizontalCommand == 0  && borderMovement)
-        {
-            if(Input.mousePosition.x >= Screen.width - panBorderThickness)
-            {
+        if(horizontalCommand == 0  && borderMovement){
+            if(Input.mousePosition.x >= Screen.width - panBorderThickness){
                 horizontalCommand = 1;
             }
-            if(Input.mousePosition.x <= panBorderThickness)
-            {
+            if(Input.mousePosition.x <= panBorderThickness){
                 horizontalCommand = -1;
             }
         }
-
 
         return horizontalCommand;
     }
