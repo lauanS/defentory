@@ -13,10 +13,10 @@ public class Testing : MonoBehaviour
 
     void Update(){
         if(Input.GetMouseButtonDown(0)){
-            Debug.Log("Mouse: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            //Debug.Log("Mouse: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
             Vector2Int vet = grid.getXY(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            Debug.Log("X" + vet.x);
-            Debug.Log("Y" + vet.y);
+            //Debug.Log("X" + vet.x);
+            //Debug.Log("Y" + vet.y);
         }        
     }
 
